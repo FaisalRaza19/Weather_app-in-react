@@ -11,7 +11,7 @@ const Main = () => {
             return null;
         }
         try {
-            const ApiKey =  process.env.API_KEY;
+            const ApiKey =  import.meta.env.VITE_API_KEY;
             const ApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${ApiKey}`;
             const data = await fetch(ApiUrl);
             const result = await data.json();
@@ -108,3 +108,4 @@ const Main = () => {
 }
 
 export default Main;
+
